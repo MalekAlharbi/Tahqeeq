@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ui-primary: var(--ui-primary);
+  --color-ui-secondary: var(--ui-secondary);
+  --color-ui-surface: var(--ui-surface);
+  --color-ui-surfaceContainer: var(--ui-surfaceContainer);
+  --color-ui-primaryText: var(--ui-primaryText);
+  --color-ui-secondaryText: var(--ui-secondaryText);
+  --color-ui-insidePrimaryText: var(--ui-insidePrimaryText);
+  --color-ui-outline: var(--ui-outline);
+  --color-ui-error: var(--ui-error);
+  --color-ui-warning: var(--ui-warning);
+  --color-ui-successful: var(--ui-successful);
+}
+
+body {
+  background: var(--ui-surface);
+}

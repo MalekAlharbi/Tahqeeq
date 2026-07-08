@@ -10,7 +10,7 @@ const MainLayout = () => {
         <>
             <div dir={i18n.language === "ar" ? "rtl" : "ltr"} className={`flex flex-col min-h-screen`}>
                 <Navbar/>
-                <div className="flex grow items-center">
+                <div className="flex grow items-center justify-center">
                     <Outlet/> 
                 </div>
                 <Footer/>

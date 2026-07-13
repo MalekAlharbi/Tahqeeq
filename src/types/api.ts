@@ -30,3 +30,16 @@ export interface AuthState {
     setUser: (user: User | null) => void,
     zLogout: () => void    
 }
+
+export interface ProjectResponse{
+    projects: {
+        id: number,
+        title: string,
+        description: string,
+    }[]
+}
+
+export interface ProjectData{
+    title: string,
+    description: string,
+}

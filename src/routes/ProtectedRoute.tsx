@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import useAuthStore from '../stores/authStore';
-import { useAuth } from '../hooks/useAuth';
+import { useUser } from '../hooks/useUser';
 
 const ProtectedRoute: React.FC = () => {
+    const { isError } = useUser();
     const isAuth = useAuthStore((state) => state.isAuth);
+    const zLogout = useAuthStore((state) => state.zLogout);
 
-    // if (isLoadingUser) {
-    //     return (
-    //         <div className="flex h-screen items-center justify-center bg-ui-surface text-ui-primaryText">
-    //             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-ui-primary"></div>
-    //             <span className="ms-3">جاري التحقق من الجلسة...</span>
-    //         </div>
-    //     );
-    // }
+    useEffect(() => {
+        if (isError) {
+            zLogout();
+        }
+    }, [isError, zLogout]);
 
-    return isAuth ? <Outlet /> : <Navigate to="/login" replace />;
+    if (isAuth && !isError) {
+        return <Outlet />;
+    }
+
+    return <Navigate to="/" replace />;
 };
 
 export default ProtectedRoute;

@@ -4,6 +4,8 @@ import Register from './pages/Register'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
 import ProtectedRoute from './routes/ProtectedRoute'
+import DashboardLayout from './layouts/DashboardLayout'
+import Projects from './pages/Projects'
 
 function App() {
 
@@ -22,12 +24,14 @@ function App() {
 
         {/* Main Pages */}
         <Route element={<ProtectedRoute />}>
-          <Route path='/dashboard' element={<>dashboard</>} />
-          <Route path='/projects' element={<>projects</>} />
-          <Route path='/tasks' element={<>tasks</>} />
-          <Route path='/settings' element={<>settings</>} />
+          <Route element={<DashboardLayout />}>
+            <Route path='/dashboard' element={<>dashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboard</>} />
+            <Route path='/projects' element={<Projects/>} />
+            <Route path='/tasks' element={<>tasks</>} />
+            <Route path='/settings' element={<>settings</>} />
+          </Route>
         </Route>
-        
+
 
 
       </Routes>

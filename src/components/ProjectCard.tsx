@@ -2,6 +2,7 @@ import { t } from "i18next";
 import { Delete, MoreVertical, Pencil } from "lucide-react";
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
+import { Link, NavLink } from "react-router-dom";
 
 interface ProjectCardProps{
     id: Number,
@@ -148,9 +149,9 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                 </div>
 
                 {/* View Project Button */}
-                <button className="mt-6 text-center w-full text-ui-primary bg-ui-primary/10 border border-ui-primary rounded-lg hover:cursor-pointer hover:bg-ui-primary/20 transition-all duration-300 ease-out">
+                <Link to={`/project/${id}`} className="inline-block mt-6 text-center w-full text-ui-primary bg-ui-primary/10 border border-ui-primary rounded-lg hover:cursor-pointer hover:bg-ui-primary/20 transition-all duration-300 ease-out">
                     View Project
-                </button>
+                </Link>
             </div>
         </>
     );

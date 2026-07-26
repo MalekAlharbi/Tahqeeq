@@ -1,5 +1,5 @@
 import api from "./axios";
-import type { LoginData, AuthResponse, RegisterData, ProjectResponse, ProjectData } from "../types/api";
+import type { LoginData, AuthResponse, RegisterData, ProjectResponse, ProjectData, CategoryResponse } from "../types/api";
 
 export const register = async (data: RegisterData): Promise<AuthResponse> => {
     try{
@@ -69,6 +69,24 @@ export const updateProject = async (id: Number, data: ProjectData) => {
         const response = await api.put(`/projects/${id}`, data)
         return response.data
     } catch (error) {
+        throw error
+    }
+}
+
+export const getProjectCategories = async (id: number) : Promise<CategoryResponse> => {
+    try {
+        const response = await api.get(`/project/${id}`)
+        return response.data
+    }catch(error){
+        throw error
+    }
+}
+
+export const addProjectCategory = async(projectId: number, data: {title: string}) => {
+    try{
+        const response = await api.post(`/category/${projectId}`, data)
+        return response.data
+    }catch(error){
         throw error
     }
 }

@@ -43,3 +43,11 @@ export interface ProjectData{
     title: string,
     description: string,
 }
+
+export interface CategoryResponse{
+    categories: {
+        id: number,
+        title: string,
+        position: number,
+    }[]
+}

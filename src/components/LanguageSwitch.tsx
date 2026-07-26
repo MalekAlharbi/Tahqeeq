@@ -13,6 +13,7 @@ const LangaugeSwitch = () => {
                 <div className="py-1" role="menu">
                 <button onClick={() => i18n.changeLanguage("en")} className="w-full block px-4 py-2 text-sm text-ui-primaryText hover:bg-ui-surfaceContainer cursor-pointer">English</button>
                 <button onClick={() => i18n.changeLanguage("ar")} className="w-full block px-4 py-2 text-sm text-ui-primaryText hover:bg-ui-surfaceContainer cursor-pointer">العربية</button>
+                <button onClick={() => i18n.changeLanguage("es")} className="w-full block px-4 py-2 text-sm text-ui-primaryText hover:bg-ui-surfaceContainer cursor-pointer">Español</button>
                 </div>
             </div>
         </div>

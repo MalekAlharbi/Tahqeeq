@@ -2,7 +2,7 @@ import { t } from "i18next";
 import { Delete, MoreVertical, Pencil } from "lucide-react";
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps{
     id: Number,

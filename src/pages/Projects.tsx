@@ -41,7 +41,7 @@ const Projects = () => {
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {getAllProjects.data.projects.map((project) => <ProjectCard key={project.id} id={project.id} title={project.title} description={project.description} handlers={{del:delProject,updt: updtProject}}/>)}
+                {getAllProjects.data?.projects?.map((project) => <ProjectCard key={project.id} id={project.id} title={project.title} description={project.description} handlers={{del:delProject,updt: updtProject}}/>)}
                 <button onClick={() => setIsUserModalOpen(true)} className="bg-ui-surface text-ui-primaryText border border-dashed border-gray-500 px-4 py-2 rounded-lg flex items-center justify-center gap-2 cursor-pointer">
                     <div className="hover:scale-102 transition-transform flex flex-col items-center gap-2">
                         <div>

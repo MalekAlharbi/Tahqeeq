@@ -44,10 +44,26 @@ export interface ProjectData{
     description: string,
 }
 
-export interface CategoryResponse{
-    categories: {
-        id: number,
-        title: string,
-        position: number,
-    }[]
+export interface Task {
+    id: number;
+    title: string;
+    description?: string;
+    category_id?: number;
+    position?: number;
+    assigned_to?: {
+        id: number;
+        name: string;
+        email: string;
+    } | string;
+}
+
+export interface Category {
+    id: number;
+    title: string;
+    position: number;
+    tasks?: Task[];
+}
+
+export interface CategoryResponse {
+    categories: Category[];
 }

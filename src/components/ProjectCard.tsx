@@ -1,4 +1,4 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { Delete, MoreVertical, Pencil } from "lucide-react";
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
@@ -12,6 +12,7 @@ interface ProjectCardProps{
 }
 
 const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
+    const { t } = useTranslation();
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [projectData, setProjectData] = useState({ title, description });
@@ -41,22 +42,22 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                 title={t("Edit Project")}
             >
                 <form onSubmit={handleUpdate} className="flex flex-col gap-4">
-                    <input type="text" value={projectData.title} onChange={(e) => setProjectData({ ...projectData, title: e.target.value })} placeholder="Project Name" className="border p-2 rounded" />
-                    <input type="text" value={projectData.description} onChange={(e) => setProjectData({ ...projectData, description: e.target.value })} placeholder="Project Description" className="border p-2 rounded" />
+                    <input type="text" value={projectData.title} onChange={(e) => setProjectData({ ...projectData, title: e.target.value })} placeholder={t("Project Name")} className="border p-2 rounded" />
+                    <input type="text" value={projectData.description} onChange={(e) => setProjectData({ ...projectData, description: e.target.value })} placeholder={t("Project Description")} className="border p-2 rounded" />
 
                     <div className="flex justify-end gap-2 mt-4">
                         <button
                             type="button"
                             onClick={() => setIsEditModalOpen(false)}
-                            className="px-4 py-2 border rounded"
+                            className="px-4 py-2 border rounded hover:bg-gray-50 transition-colors"
                         >
-                            إلغاء
+                            {t("Cancel")}
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-blue-600 text-white rounded"
+                            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
                         >
-                            حفظ
+                            {t("Save")}
                         </button>
                     </div>
                 </form>
@@ -72,15 +73,15 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                         <button
                             type="button"
                             onClick={() => setIsDeleteModalOpen(false)}
-                            className="px-4 py-2 border rounded"
+                            className="px-4 py-2 border rounded hover:bg-gray-50 transition-colors"
                         >
-                            إلغاء
+                            {t("Cancel")}
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-red-600 text-white rounded"
+                            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
                         >
-                            حذف
+                            {t("Delete")}
                         </button>
                     </div>
                 </form>
@@ -91,7 +92,7 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                 <div className="flex items-center justify-between">
                     {/* Priority Badge */}
                     <div className="bg-ui-error/20 text-ui-error border-ui-error/40 border text-xs font-semibold px-2 py-0.5 rounded-full">
-                        High Priority
+                        {t("High Priority")}
                     </div>
                     {/* More icon for edit and delete */}
                     <div className="relative">
@@ -103,7 +104,7 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                             <div className="flex flex-col bg-ui-surfaceContainer border-ui-outline border-b absolute right-0 p-1 rounded-lg z-10 min-w-[120px]">
                                 <button
                                     onClick={() => setIsEditModalOpen(true)}
-                                    className="text-ui-primaryText hover:bg-ui-outline/20 p-2 rounded-md flex gap-2 items-center justify-start cursor-pointer w-full text-right"
+                                    className="text-ui-primaryText hover:bg-ui-outline/20 p-2 rounded-md flex gap-2 items-center justify-start cursor-pointer w-full text-start"
                                 >
                                     <Pencil size={16} />{t("Edit")}
                                 </button>
@@ -135,7 +136,7 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                 {/* Progress */}
                 <div className="mt-2">
                     <div className="text-sm text-gray-600 flex justify-between items-center">
-                        <p>Progress</p>
+                        <p>{t("Progress")}</p>
                         <p>32%</p>
                     </div>
 
@@ -149,8 +150,8 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                 </div>
 
                 {/* View Project Button */}
-                <Link to={`/project/${id}`} className="inline-block mt-6 text-center w-full text-ui-primary bg-ui-primary/10 border border-ui-primary rounded-lg hover:cursor-pointer hover:bg-ui-primary/20 transition-all duration-300 ease-out">
-                    View Project
+                <Link to={`/project/${id}`} className="inline-block mt-6 text-center w-full text-ui-primary bg-ui-primary/10 border border-ui-primary rounded-lg hover:cursor-pointer hover:bg-ui-primary/20 transition-all duration-300 ease-out py-2 font-medium">
+                    {t("View Project")}
                 </Link>
             </div>
         </>

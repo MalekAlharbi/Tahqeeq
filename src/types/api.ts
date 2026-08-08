@@ -51,10 +51,10 @@ export interface Task {
     category_id?: number;
     position?: number;
     assigned_to?: {
-        id: number;
-        name: string;
-        email: string;
-    } | string;
+        id: number,
+        name: string,
+        email: string,
+    };
 }
 
 export interface Category {

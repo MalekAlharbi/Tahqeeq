@@ -1,5 +1,6 @@
 import { useDroppable } from '@dnd-kit/react';
 import { Plus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface DroppableProps {
   id: number;
@@ -10,6 +11,7 @@ interface DroppableProps {
 
 export function Droppable({ id, title, children, onAddTask }: DroppableProps) {
   const { ref, isDropTarget } = useDroppable({ id });
+  const { t } = useTranslation();
 
   return (
     <div
@@ -28,10 +30,10 @@ export function Droppable({ id, title, children, onAddTask }: DroppableProps) {
               onClick={onAddTask}
               type="button"
               className="flex items-center gap-1 text-xs bg-ui-primary/10 hover:bg-ui-primary/20 text-ui-primary font-semibold px-2 py-1 rounded-md transition-colors cursor-pointer"
-              title="إضافة مهمة"
+              title={t("Add Task")}
             >
               <Plus size={14} />
-              <span>مهمة</span>
+              <span>{t("Task")}</span>
             </button>
           )}
         </div>
@@ -46,7 +48,7 @@ export function Droppable({ id, title, children, onAddTask }: DroppableProps) {
           className="flex items-center justify-center gap-1.5 text-xs text-gray-500 hover:text-ui-primary hover:bg-white/80 border border-dashed border-gray-300 hover:border-ui-primary p-2 rounded-lg transition-all cursor-pointer mt-1"
         >
           <Plus size={14} />
-          <span>إضافة مهمة جديدة</span>
+          <span>{t("Add New Task")}</span>
         </button>
       )}
     </div>

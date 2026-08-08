@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import ProtectedRoute from './routes/ProtectedRoute'
 import DashboardLayout from './layouts/DashboardLayout'
 import Projects from './pages/Projects'
-import Project from './pages/Project'
+import Project from './pages/ProjectKanban'
 
 function App() {
 

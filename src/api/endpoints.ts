@@ -100,7 +100,7 @@ export const addProjectTask = async (categoryId: number, data: { title: string; 
     }
 }
 
-export const updateProjectTaskPosition = async (taskId: number, data: { newPosition: number; category_id?: number }) => {
+export const updateProjectTaskPosition = async (taskId: number, data: { position: number; category_id: number }) => {
     try {
         const response = await api.put(`/tasks/position/${taskId}`, data)
         return response.data

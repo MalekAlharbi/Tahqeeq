@@ -23,15 +23,10 @@ export const useTask = (projectId?: number) => {
 
     const updateTaskPosition = useMutation({
         mutationKey: ["updateTaskPosition"],
-        mutationFn: (data: { taskId: number; newPosition: number; category_id?: number }) =>
-            updateProjectTaskPosition(data.taskId, { newPosition: data.newPosition, category_id: data.category_id }),
+        mutationFn: (data: {taskId : number ,position: number; category_id: number }) =>
+            updateProjectTaskPosition(data.taskId, { position: data.position, category_id: data.category_id }),
         onSuccess: () => {
             console.log("Task position updated successfully");
-            if (projectId) {
-                queryClient.invalidateQueries({ queryKey: ["project", projectId] });
-            } else {
-                queryClient.invalidateQueries({ queryKey: ["project"] });
-            }
         },
         onError: (err) => {
             console.error("Error updating task position", err);

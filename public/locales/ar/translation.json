@@ -59,5 +59,11 @@
   "Assignee Name (e.g. Malek)": "اسم الشخص (مثال: مالك)",
   "No tasks": "لا توجد مهام",
   "Add Task": "إضافة مهمة",
-  "Task": "مهمة"
+  "Task": "مهمة",
+  "Edit Category": "تعديل القسم",
+  "Delete Category": "حذف القسم",
+  "Are you sure you want to delete this category?": "هل أنت تأكد من أنك تريد حذف هذا القسم؟",
+  "Edit Task": "تعديل المهمة",
+  "Delete Task": "حذف المهمة",
+  "Are you sure you want to delete this task?": "هل أنت تأكد من أنك تريد حذف هذه المهمة؟"
 }

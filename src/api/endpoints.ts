@@ -108,3 +108,39 @@ export const updateProjectTaskPosition = async (taskId: number, data: { position
         throw error
     }
 }
+
+export const updateProjectCategory = async (categoryId: number, data: { title: string }) => {
+    try {
+        const response = await api.put(`/category/${categoryId}`, data)
+        return response.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const deleteProjectCategory = async (categoryId: number) => {
+    try {
+        const response = await api.delete(`/category/${categoryId}`)
+        return response.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const updateProjectTask = async (taskId: number, data: { title: string; assigned_to?: string; description?: string }) => {
+    try {
+        const response = await api.put(`/tasks/${taskId}`, data)
+        return response.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const deleteProjectTask = async (taskId: number) => {
+    try {
+        const response = await api.delete(`/tasks/${taskId}`)
+        return response.data
+    } catch (error) {
+        throw error
+    }
+}

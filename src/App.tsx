@@ -7,6 +7,8 @@ import ProtectedRoute from './routes/ProtectedRoute'
 import DashboardLayout from './layouts/DashboardLayout'
 import Projects from './pages/Projects'
 import Project from './pages/ProjectKanban'
+import Dashboard from './pages/Dashboard'
+import Settings from './pages/Settings'
 
 function App() {
 
@@ -26,15 +28,12 @@ function App() {
         {/* Main Pages */}
         <Route element={<ProtectedRoute />}>
           <Route element={<DashboardLayout />}>
-            <Route path='/dashboard' element={<>dashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboarddashboard</>} />
+            <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/projects' element={<Projects/>} />
             <Route path='/project/:id' element={<Project/>} />
-            <Route path='/tasks' element={<>tasks</>} />
-            <Route path='/settings' element={<>settings</>} />
+            <Route path='/settings' element={<Settings />} />
           </Route>
         </Route>
-
-
 
       </Routes>
     </BrowserRouter>

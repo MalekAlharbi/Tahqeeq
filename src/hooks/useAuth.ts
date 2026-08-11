@@ -1,6 +1,6 @@
 import useAuthStore from "../stores/authStore";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { login, logout, register } from "../api/endpoints";
+import { login, logout, register, updateUser } from "../api/endpoints";
 import { useNavigate } from "react-router-dom";
 
 export const useAuth = () => {
@@ -48,10 +48,29 @@ export const useAuth = () => {
             console.log(err)
         }
     })
+
+    // Update User
+    const updateUserMutation = useMutation({
+        mutationKey: ["updateUser"],
+        mutationFn: (data: { id: number; name: string; email: string }) =>
+            updateUser(data.id, { name: data.name, email: data.email }),
+        onSuccess: (data) => {
+            if (data?.user) {
+                setUser(data.user);
+            } else if (data) {
+                setUser(data);
+            }
+        },
+        onError: (err) => {
+            console.error("Error updating user", err);
+        }
+    })
+
     return {
         login: loginMutation.mutate,
         logout: logoutMutation.mutate,
         register: registerMutation,
+        updateUser: updateUserMutation,
         isLoggingIn: loginMutation.isPending,
     }
 }

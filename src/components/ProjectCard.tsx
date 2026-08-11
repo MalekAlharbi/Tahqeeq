@@ -101,7 +101,7 @@ const ProjectCard = ({id, title, description, handlers }: ProjectCardProps) => {
                                 <MoreVertical />
                             </summary>
 
-                            <div className="flex flex-col bg-ui-surfaceContainer border-ui-outline border-b absolute right-0 p-1 rounded-lg z-10 min-w-[120px]">
+                            <div className="flex flex-col bg-ui-surfaceContainer border-ui-outline border-b absolute right-0 p-1 rounded-lg z-10 min-w-30">
                                 <button
                                     onClick={() => setIsEditModalOpen(true)}
                                     className="text-ui-primaryText hover:bg-ui-outline/20 p-2 rounded-md flex gap-2 items-center justify-start cursor-pointer w-full text-start"

@@ -127,9 +127,18 @@ export const deleteProjectCategory = async (categoryId: number) => {
     }
 }
 
-export const updateProjectTask = async (taskId: number, data: { title: string; assigned_to?: string; description?: string }) => {
+export const updateProjectTaskTitle = async (taskId: number, data: { title: string }) => {
     try {
-        const response = await api.put(`/tasks/${taskId}`, data)
+        const response = await api.put(`/tasks/title/${taskId}`, data)
+        return response.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const updateProjectTaskIsComplete = async (taskId: number) => {
+    try {
+        const response = await api.put(`/tasks/completed/${taskId}`)
         return response.data
     } catch (error) {
         throw error
@@ -139,6 +148,15 @@ export const updateProjectTask = async (taskId: number, data: { title: string; a
 export const deleteProjectTask = async (taskId: number) => {
     try {
         const response = await api.delete(`/tasks/${taskId}`)
+        return response.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const updateUser = async (id: number, data: { name: string, email: string }) => {
+    try {
+        const response = await api.put(`/user/${id}`, data)
         return response.data
     } catch (error) {
         throw error

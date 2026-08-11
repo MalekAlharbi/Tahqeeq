@@ -65,5 +65,19 @@
   "Are you sure you want to delete this category?": "هل أنت تأكد من أنك تريد حذف هذا القسم؟",
   "Edit Task": "تعديل المهمة",
   "Delete Task": "حذف المهمة",
-  "Are you sure you want to delete this task?": "هل أنت تأكد من أنك تريد حذف هذه المهمة؟"
+  "Are you sure you want to delete this task?": "هل أنت تأكد من أنك تريد حذف هذه المهمة؟",
+  "Account Settings": "إعدادات الحساب",
+  "Personal Information": "المعلومات الشخصية",
+  "Update your profile details below.": "قم بتحديث بيانات ملفك الشخصي أدناه.",
+  "Full Name": "الاسم الكامل",
+  "Save Changes": "حفظ التغييرات",
+  "Profile updated successfully!": "تم تحديث البيانات الشخصية بنجاح!",
+  "Overview": "نظرة عامة",
+  "Total Projects": "إجمالي المشاريع",
+  "Active Status": "الحالة الحالية",
+  "Active": "نشط",
+  "Quick Actions": "إجراءات سريعة",
+  "Recent Projects": "المشاريع الأخيرة",
+  "No projects found. Create your first project!": "لا توجد مشاريع حالياً. أنشئ مشروعك الأول!",
+  "Account Preferences": "تفضيلات الحساب"
 }

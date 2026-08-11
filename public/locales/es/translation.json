@@ -65,5 +65,19 @@
   "Are you sure you want to delete this category?": "¿Estás seguro de que deseas eliminar esta categoría?",
   "Edit Task": "Editar tarea",
   "Delete Task": "Eliminar tarea",
-  "Are you sure you want to delete this task?": "¿Estás seguro de que deseas eliminar esta tarea?"
+  "Are you sure you want to delete this task?": "¿Estás seguro de que deseas eliminar esta tarea?",
+  "Account Settings": "Configuración de la cuenta",
+  "Personal Information": "Información personal",
+  "Update your profile details below.": "Actualice los detalles de su perfil a continuación.",
+  "Full Name": "Nombre completo",
+  "Save Changes": "Guardar cambios",
+  "Profile updated successfully!": "¡Perfil actualizado con éxito!",
+  "Overview": "Resumen",
+  "Total Projects": "Total de Proyectos",
+  "Active Status": "Estado Activo",
+  "Active": "Activo",
+  "Quick Actions": "Acciones Rápidas",
+  "Recent Projects": "Proyectos Recientes",
+  "No projects found. Create your first project!": "¡No se encontraron proyectos. Crea tu primer proyecto!",
+  "Account Preferences": "Preferencias de la cuenta"
 }

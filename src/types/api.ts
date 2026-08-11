@@ -50,6 +50,7 @@ export interface Task {
     description?: string;
     category_id?: number;
     position?: number;
+    is_completed?: boolean | number;
     assigned_to?: {
         id: number,
         name: string,

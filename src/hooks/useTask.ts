@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addProjectTask, updateProjectTaskPosition, updateProjectTask, deleteProjectTask } from "../api/endpoints";
+import { addProjectTask, updateProjectTaskPosition, updateProjectTaskTitle, updateProjectTaskIsComplete, deleteProjectTask } from "../api/endpoints";
 
 export const useTask = (projectId?: number) => {
     const queryClient = useQueryClient();
@@ -35,8 +35,8 @@ export const useTask = (projectId?: number) => {
 
     const updateTask = useMutation({
         mutationKey: ["updateTask"],
-        mutationFn: (data: { taskId: number; title: string; assigned_to?: string; description?: string }) =>
-            updateProjectTask(data.taskId, { title: data.title, assigned_to: data.assigned_to, description: data.description }),
+        mutationFn: (data: { taskId: number; title: string; }) =>
+            updateProjectTaskTitle(data.taskId, { title: data.title }),
         onSuccess: () => {
             console.log("Task updated successfully");
             if (projectId) {
@@ -47,6 +47,22 @@ export const useTask = (projectId?: number) => {
         },
         onError: (err) => {
             console.error("Error updating task", err);
+        }
+    });
+
+    const toggleTaskIsComplete = useMutation({
+        mutationKey: ["toggleTaskIsComplete"],
+        mutationFn: (taskId: number) => updateProjectTaskIsComplete(taskId),
+        onSuccess: () => {
+            console.log("Task completion toggled successfully");
+            if (projectId) {
+                queryClient.invalidateQueries({ queryKey: ["project", projectId] });
+            } else {
+                queryClient.invalidateQueries({ queryKey: ["project"] });
+            }
+        },
+        onError: (err) => {
+            console.error("Error toggling task completion", err);
         }
     });
 
@@ -70,6 +86,7 @@ export const useTask = (projectId?: number) => {
         addTask,
         updateTaskPosition,
         updateTask,
+        toggleTaskIsComplete,
         deleteTask
     };
 };

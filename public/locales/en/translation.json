@@ -65,5 +65,19 @@
   "Are you sure you want to delete this category?": "Are you sure you want to delete this category?",
   "Edit Task": "Edit Task",
   "Delete Task": "Delete Task",
-  "Are you sure you want to delete this task?": "Are you sure you want to delete this task?"
+  "Are you sure you want to delete this task?": "Are you sure you want to delete this task?",
+  "Account Settings": "Account Settings",
+  "Personal Information": "Personal Information",
+  "Update your profile details below.": "Update your profile details below.",
+  "Full Name": "Full Name",
+  "Save Changes": "Save Changes",
+  "Profile updated successfully!": "Profile updated successfully!",
+  "Overview": "Overview",
+  "Total Projects": "Total Projects",
+  "Active Status": "Active Status",
+  "Active": "Active",
+  "Quick Actions": "Quick Actions",
+  "Recent Projects": "Recent Projects",
+  "No projects found. Create your first project!": "No projects found. Create your first project!",
+  "Account Preferences": "Account Preferences"
 }
